@@ -22,4 +22,6 @@ run        su plone -c "cd /tmp/Plone-4.3.2-UnifiedInstaller; ./install.sh zeo -
 run        su plone -c "git clone https://github.com/gauthierc/confPloneZeo.git /usr/local/Zeo/confPloneZeo; cp -r /usr/local/Zeo/confPloneZeo/* /usr/local/Zeo/zeocluster/ "
 run        su plone -c "cd /usr/local/Zeo/zeocluster; bin/buildout -c deployement.cfg"
 expose     5501
-cmd        ["su plone -c '/usr/local/Zeo/zeocluster/bin/supervisord'"]
+expose     5502
+expose     8888
+cmd        su plone -c "/usr/local/Zeo/zeocluster/bin/supervisord -n"
