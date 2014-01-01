@@ -19,7 +19,7 @@ run        mkdir -p /usr/local/Zeo/
 run        useradd plone -d /usr/local/Zeo -s /bin/bash
 run        chown -R plone:plone /usr/local/Zeo /tmp/Plone-4.3.2-UnifiedInstaller
 run        su plone -c "cd /tmp/Plone-4.3.2-UnifiedInstaller; ./install.sh zeo --target=/usr/local/Zeo/"
-run        su plone -c "git clone https://github.com/gauthierc/confPloneZeo.git /usr/local/Zeo/zeocluster"
-run        su plone -c "/usr/local/Zeo/zeocluster/bin/buildout -c deployement.cfg"
+run        su plone -c "git clone https://github.com/gauthierc/confPloneZeo.git /usr/local/Zeo/confPloneZeo; cp -r /usr/local/Zeo/confPloneZeo/* /usr/local/Zeo/zeocluster/ "
+run        su plone -c "cd /usr/local/Zeo/zeocluster; bin/buildout -c deployement.cfg"
 expose     5501
 cmd        ["su plone -c '/usr/local/Zeo/zeocluster/bin/supervisord'"]
