@@ -7,7 +7,7 @@
 # VERSION                0.1
 # DOCKER-VERSION        0.7.2
 
-from       gauthierc/Plone 
+from       gauthierc/plone 
 MAINTAINER Gauthier C.
 run        echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run        apt-get update; apt-get upgrade -y
