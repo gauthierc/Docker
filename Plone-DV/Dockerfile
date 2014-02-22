@@ -11,8 +11,8 @@ from       gauthierc/plone
 MAINTAINER Gauthier C.
 run        echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run        apt-get update; apt-get upgrade -y; apt-get -y install aptitude
-run	   aptitude install rubygems
-run	   aptitude -R install tesseract-ocr tesseract-ocr-fra pdftk graphicsmagick poppler-utils poppler-data libreoffice
+run	   aptitude -y install rubygems
+run	   aptitude -y -R install tesseract-ocr tesseract-ocr-fra pdftk graphicsmagick poppler-utils poppler-data libreoffice
 run	   gem install docsplit;cd /usr/bin/;ln -s /usr/local/bin/docsplit
 run	   sed -i 's/^\(eggs.*\)$/\1\n    collective.documentviewer/' /usr/local/Zeo/zeocluster/extend-buildout.cfg
 run        su plone -c "cd /usr/local/Zeo/zeocluster; bin/buildout -c deployement.cfg"
