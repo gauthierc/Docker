@@ -10,7 +10,7 @@
 from       gauthierc/plone 
 MAINTAINER Gauthier C.
 run        echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
-run        apt-get update; apt-get upgrade -y
+run        apt-get update; apt-get upgrade -y; apt-get -y install aptitude
 run	   aptitude install rubygems
 run	   aptitude -R install tesseract-ocr tesseract-ocr-fra pdftk graphicsmagick poppler-utils poppler-data libreoffice
 run	   gem install docsplit;cd /usr/bin/;ln -s /usr/local/bin/docsplit
