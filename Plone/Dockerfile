@@ -7,9 +7,8 @@
 # VERSION                0.3
 # DOCKER-VERSION        1.3.2
 
-from        ubuntu:12.04
+from        ubuntu:14.04
 MAINTAINER Gauthier C.
-run        echo "deb http://archive.ubuntu.com/ubuntu precise main universe" > /etc/apt/sources.list
 run        apt-get update
 run        apt-get upgrade -y
 run        apt-get -y install wget git gcc patch python-dev make libxml2 python-libxml2 python-libxslt1 libxslt1-dev python-ldap libldap2-dev libsasl2-dev libpcre3-dev
